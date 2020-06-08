@@ -1,4 +1,5 @@
 #include <systemc.h>
+#include <unistd.h>
 
 class write_if : virtual public sc_interface
 {
@@ -118,6 +119,14 @@ public:
 
 	// Completer ici : envoyer i caracteres puis attendre 1000 ns
 	// (Fill here: send i characters and wait for 1000 ns)
+
+
+        // send i characters
+        
+
+
+        // wait for 1000ns
+      usleep(1000);
 
 
       }
