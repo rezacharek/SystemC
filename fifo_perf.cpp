@@ -121,12 +121,12 @@ public:
 
 	// Completer ici : envoyer i caracteres puis attendre 1000 ns
 	// (Fill here: send i characters and wait for 1000 ns)
-        char message[i] = genere_message(i);
+        char *message = genere_message(i);
         for(int j = 0 ; j < i; j++){
-          out.write(message[j]);
+          out->write(message[j]);
           total -= 1;
         }
-        sc_start(1000);
+        usleep(1000);
 
 
 
@@ -151,8 +151,9 @@ public:
     // Completer ici : consommer un caractere toutes les 100 ns
     // (Fill here: get one character every 100 ns)
     char c;
-    while(in.num_available() >= 0) {
-      in.read(c);
+    while(in->num_available() >= 0) {
+      in->read(c);
+      usleep(1000);
     }
 
   }
