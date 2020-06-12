@@ -1,5 +1,7 @@
-#include <systemc.h>
- 
+#include<systemc.h>
+
+
+using namespace std;
 int sc_main (int argc, char * argv[])
 {
    sc_time T(0.333, SC_NS);
