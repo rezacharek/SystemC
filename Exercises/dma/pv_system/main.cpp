@@ -39,6 +39,16 @@ int sc_main(int argc , char **argv) {
   testbench.initiator_port(router.target_port);
   testbench.pv_dma_irq_in(pv_dma_irq);
   //...
+  dma.initiator_port(router.target_port);
+  dma.pv_dma_irq_out(pv_dma_irq);
+
+  router.initiator_port(dma.target_port);
+  router.initiator_port(memory1.target_port);
+  router.initiator_port(memory2.target_port);
+
+  
+
+
   
   sc_start();
 

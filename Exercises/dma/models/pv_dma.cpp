@@ -55,11 +55,15 @@ pv_dma::pv_dma(sc_module_name module_name,
   // mettre ici l'indication du sc_thread "transfer" avec sa sensibilite
   // (put here the declaration of sc_thread "transfer" with its sensitivity
   // ...
+  SC_THREAD(transfer);
+  sensitive(m_start_transfer);
   dont_initialize();
 
   // mettre ici l'indication du sc_method "irq" avec sa sensibilite
   // (put here the declaration of sc_method "irq" with its sensitivity
   // ...
+  SC_THREAD(irq);
+  sensitive(m_irq_to_change);
   dont_initialize();
   
   pv_dma_irq_out.initialize(false);
